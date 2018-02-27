@@ -14,15 +14,17 @@ imagen: string;
 isGlutenFree: boolean;
 cocinero:string;
 ingredientes: string[];
+show:boolean;
   constructor() { 
     console.log('RecetaComponent constructor');
-    this.nombre="Bocadillo de calamares";
-    this.descripcion="El bocadillo de rabas es muy popular en el norte de España, donde las costas proporcionan el calamar fresco. La forma de preparación es similar a la versión madrileña y pueden encontrarse en diversos bares y restaurantes de Cantabria, así como del País Vasco. En Madrid, existen hasta Rutas del Bocadillo de Calamares que permiten descubrir variantes del bocadillo.";
+    this.nombre="Pintxopote";
+    this.descripcion="Un pote siempre entra mejor en compañia de un pintxo";
     this.likes=32;
-    this.imagen="https://recetasdecocinafaciles.net/wp-content/uploads/2018/01/bocadillo-de-calamares-783x321.jpg";
+    this.imagen="https://madridfree.org/wp-content/uploads/2016/06/Degustaci%C3%B3n-de-cervezas-y-tortillas.jpg";
     this.isGlutenFree=false;
-    this.cocinero="Carlos Arquiñano";
-    this.ingredientes=['Calamares','Limon','Pan','Salsa'];
+    this.cocinero="Karlos Argiñano";
+    this.ingredientes=['Patatas','Aceite','Pan','Cerveza'];
+    this.show=false;
   }
   ngOnInit() {
   }

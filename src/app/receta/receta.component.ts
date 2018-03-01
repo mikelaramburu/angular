@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Receta}from '../model/receta';
 
 @Component({
   selector: 'app-receta',
@@ -6,31 +7,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./receta.component.scss']
 })
 export class RecetaComponent implements OnInit {
+
 //atributos
-nombre : string;
-descripcion: string;
-likes: number;
-imagen: string;
-isGlutenFree: boolean;
-cocinero:string;
-ingredientes: string[];
 show:boolean;
+glyphicon:string;
+receta: Receta;
+
   constructor() { 
     console.log('RecetaComponent constructor');
-    this.nombre="Pintxopote";
-    this.descripcion="Un pote siempre entra mejor en compañia de un pintxo";
-    this.likes=32;
-    this.imagen="https://madridfree.org/wp-content/uploads/2016/06/Degustaci%C3%B3n-de-cervezas-y-tortillas.jpg";
-    this.isGlutenFree=false;
-    this.cocinero="Karlos Argiñano";
-    this.ingredientes=['Patatas','Aceite','Pan','Cerveza'];
+    this.receta=new Receta("Marmitako");
+    this.receta.addIngredientes('patata');
+    this.receta.addIngredientes('bonito');
+    this.receta.addIngredientes('pimiento verde');
+    this.receta.addIngredientes('pimiento chorizero');
+    this.receta.addIngredientes('aceite');
+
+  
+
     this.show=false;
+    this.glyphicon="glyphicon glyphicon-menu-down";
   }
   ngOnInit() {
-  }
+  } 
   sumarLike(){
     console.log("Click sumarLike");
-    this.likes++;
+    this.receta.likes++;
   }
 
+  showIngredientes(){
+    console.log('Click showIngredientes')
+    this.show=!this.show;
+    this.glyphicon=(this.show)?'glyphicon-menu-up':'glyphicon-menu-down'; 
+
+  }
+  
 }

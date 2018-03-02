@@ -7,17 +7,17 @@ export class Receta{
     isGlutenFree: boolean;
     cocinero:string;
     ingredientes: string[];
-    receta:Receta;
+   
 
     //Solo es posible un constructor
     constructor(nombre:string){       
              
         console.log("Receta constructor");
         this.nombre=nombre;
-        this.imagen='assets/img/receta_default.jpg';
+        this.imagen='assets/img/marmitako.jpg';
         this.likes=0;
         this.cocinero='anonimo'
-        this.descripcion=" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis illum et similique voluptatem molestiae, doloribus esse. Nesciunt dolores optio deleniti sunt, harum vel ab officiis autem, dolore quis quo expedita!"
+        this.descripcion="La marmita de bonito es un plato basado en Thunnus alalunga, cuyo origen se encuentra en los pescadores asturianos, cántabros y vascos. Se trata de un guiso de bonito con patatas, cebolla, pimiento y tomate, principalmente."
         this.isGlutenFree=false;
         this.ingredientes=[];        
     }

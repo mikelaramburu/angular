@@ -1,0 +1,12 @@
+.catalogo{
+    li{
+        list-style-type: none;
+        background-color: red;
+        color: white;
+        padding: 3px;
+        border: 1px solid steelblue;
+        
+    }
+   
+    display: flex;
+}

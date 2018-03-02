@@ -1,0 +1,28 @@
+<p>
+  Ejemplo de un componente padre hijo. 
+  <p>Arprender a pasar párametros con @input y @output</p>
+
+  <nav aria-label="Page navigation"> 
+    <ul class="pagination">
+       
+        <!-- llamada componente hijo -->
+        <li *ngFor="let coche of stocks" [class.active]="coche == coche1">        
+            <a>{{coche.marca}} {{coche.modelo}}</a>      
+      
+      </li>
+    </ul>
+</nav>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Catalogo de coches</h3>
+    </div>
+    <div class="panel-body">
+      
+      <div *ngFor="let cocheIteracion of stocks">
+          <app-coche [cocheParametro]="cocheIteracion"
+          (cocheSeleccionado)="recibirCoche($event)"></app-coche>
+
+      </div>
+    </div>
+  </div>

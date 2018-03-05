@@ -1,35 +1,22 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Coche } from '../../model/coche';
+import {Coche} from '../../model/coche';
+
 
 @Component({
   selector: 'app-coche',
   templateUrl: './coche.component.html',
   styleUrls: ['./coche.component.scss']
 })
-
 export class CocheComponent implements OnInit {
-  //Parametros de entrada desde el elemento padre al hijo
-  @Input('cocheParametro') coche: Coche;
 
+  @Input('c1') c1 : Coche; // coche para mostrar
+  @Input('c2') c2 : Coche; // coche para comparar
 
- //los parametros de salida se realizan a traves de Eventos
-  @Output() cocheSeleccionado= new EventEmitter();
-
-  constructor(){
-    console.log("CocheComponent constructor")
-  }
+  
+  constructor() { }
 
   ngOnInit() {
-    console.log("CocheComponent ngOnInit")
-  }
-
-   /**
-   * Funcion para Emitir el Evento desde el Hijo hacia el Padre
-   */
-  seleccionar($event){
-    console.log('CocheComponent: Emitimos evento al ComponentePadre %o', this.coche );
-    this.cocheSeleccionado.emit({coche: this.coche});
-
+    console.log('CocheComponent constructor');
   }
 
 }

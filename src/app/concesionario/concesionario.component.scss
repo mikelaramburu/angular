@@ -1,12 +1,13 @@
 .catalogo{
+    display:flex;
     li{
-        list-style-type: none;
-        background-color: red;
-        color: white;
-        padding: 3px;
-        border: 1px solid steelblue;
-        
+
+     list-style-type:none;
+    background-color: teal;
+    color: #FFF;
+    padding: 3px;
+    border: 1px solid steelblue;
+    margin-right:10px;
     }
-   
-    display: flex;
+    
 }

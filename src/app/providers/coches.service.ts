@@ -28,7 +28,8 @@ export class CochesService {
                           element.puertas,
                           element.foto,
                           element.version,
-                          element.consumo
+                          element.consumo,
+                          element.caballos
                           );
 
         coches.push(coche);

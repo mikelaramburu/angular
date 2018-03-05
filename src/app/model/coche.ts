@@ -11,7 +11,7 @@ export class Coche{
     caballos: number;
     consumo: number;
     
-    constructor( marca:string , modelo:string, puertas:number, foto?:string, version?:string, consumo?:number ){
+    constructor( marca:string , modelo:string, puertas:number, foto?:string, version?:string, consumo?:number, caballos?: number ){
         this.id = -1;
         this.marca = marca;
         this.modelo = modelo;
@@ -22,7 +22,7 @@ export class Coche{
             this.foto = 'assets/img/coche.jpg';
         }    
         this.puertas = puertas;
-        this.caballos = 0;
+        this.caballos = caballos;
         this.consumo = consumo;
 
 

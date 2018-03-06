@@ -8,6 +8,7 @@ import{HomeComponent} from './home/home.component';
 import{UsuarioComponent} from './usuario/usuario.component';
 import { ConcesionarioComponent } from './concesionario/concesionario.component';
 import{RecetarioComponent} from './recetario/recetario.component';
+//import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
  const appRoutes: Routes = [
     { path: '', component: HomeComponent},

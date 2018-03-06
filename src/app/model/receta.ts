@@ -10,7 +10,9 @@ export class Receta{
    
 
     //Solo es posible un constructor
-    constructor(nombre:string){       
+    constructor( nombre : string ,
+        cocinero: string = 'Anonimo' //valor por defecto para 'undefined' o sin parametro
+    ){     
              
         console.log("Receta constructor");
         this.nombre=nombre;
@@ -21,10 +23,7 @@ export class Receta{
         this.isGlutenFree=false;
         this.ingredientes=[];        
     }
-    tostring(){
-        console.log(`Receta nombre =$(this.nombre)`);
-    }
-
+   
     addIngredientes(ingrediente: string){
         this.ingredientes.push(ingrediente);
     }

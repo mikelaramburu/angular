@@ -1,10 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Nuestro Modulo para routing
 import {AppRouter} from './app-route';
 
+//Services
+import { CochesService } from './providers/coches.service';
+import { RecetasService } from './providers/recetas.service';
+
+//Pipes
+import {RoundPipe} from './pipes/round.pipe';
+import {FilterPipe} from './pipes/filter.pipe';
+
+//Componentes
 import { AppComponent } from './app.component';
 import { RecetaComponent } from './receta/receta.component';
 import { PropiedadesComponent } from './propiedades/propiedades.component';
@@ -13,14 +22,11 @@ import { HomeComponent } from './home/home.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ConcesionarioComponent } from './concesionario/concesionario.component';
 import { CocheComponent } from './concesionario/coche/coche.component';
-import { CochesService } from './providers/coches.service';
 import { ListadoComponent } from './concesionario/listado/listado.component';
-
-//Pipes
-import {RoundPipe} from './pipes/round.pipe';
-import {FilterPipe} from './pipes/filter.pipe';
 import { RecetarioComponent } from './recetario/recetario.component';
-import { RecetaDetalleComponent } from './recetario/receta-detalle/receta-detalle.component';
+import { DetalleComponent } from './recetario/detalle/detalle.component';
+
+//import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -36,15 +42,23 @@ import { RecetaDetalleComponent } from './recetario/receta-detalle/receta-detall
     RoundPipe,
     FilterPipe,
     RecetarioComponent,
-    RecetaDetalleComponent
+    DetalleComponent,
+    //ReactiveFormsComponent
 
   ],
   imports: [
     BrowserModule,
     AppRouter,
     FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [CochesService],
-  bootstrap: [AppComponent]
+
+  providers: [
+    CochesService,
+    RecetasService
+
+  ],
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

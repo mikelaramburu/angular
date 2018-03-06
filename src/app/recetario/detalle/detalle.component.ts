@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Receta } from '../../model/receta';
+import { RecetasService } from '../../providers/recetas.service';
+
 
 @Component({
   selector: 'app-detalle',
@@ -7,6 +9,8 @@ import { Receta } from '../../model/receta';
   styleUrls: ['./detalle.component.scss']
 })
 export class DetalleComponent implements OnInit {
+  recetaSelec : Array<Receta>;
+  receta1=Receta;
 
   @Input('receta') receta : Receta;
 

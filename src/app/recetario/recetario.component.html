@@ -1,17 +1,34 @@
 {{recetaSelec|json}}
 
+<nav aria-label="Recetario">
+  <ul class="pagination">
+      <li *ngFor="let receta of recetas" [class.active]="receta==receta1" (click)="seleccionarReceta(receta)">
+      <a>{{receta.nombre}} </a>
+    </li>
+    </ul>
+</nav>
+
 <div class="row">
   <div class="col-xs-3">
-    <h3>Listado Recetas</h3>   
-    <ul>
-      <li *ngFor="let receta of recetas"
-          (click)="seleccionarReceta(receta)">{{receta.nombre}}</li>
-    </ul>  
+      <div class="panel panel-default">
+          <div class="panel-heading">
+             <h3>Listado Recetas</h3>   
+          </div>
+      <div class="panel body">
+          <ul>
+              <li *ngFor="let receta of recetas"
+                  (click)="seleccionarReceta(receta)">{{receta.nombre}}</li>
+            </ul>  
+      </div>
+  
   </div>
+</div>
+
 
   <div class="col-xs-9">
     <h3>Detalle Receta</h3>
-    <app-detalle [receta]="recetaSelec"></app-detalle>
+    <app-detalle [receta]="recetaSelec"
+                           (eventoEmitir)="recibirReceta($event)" ></app-detalle>
   </div>  
 
 </div>  

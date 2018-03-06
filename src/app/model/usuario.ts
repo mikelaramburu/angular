@@ -8,6 +8,7 @@ export class Usuario{
     avatar : string;
     sexo : Sexo;
 
+    //constructor
     constructor( nombre:string = 'Anonimo' ){
 
         this.id = -1;

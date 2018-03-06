@@ -22,7 +22,7 @@ export class RecetasService {
        receta = new Receta( el.nombre, el.cocinero);
        
        el.ingredientes.forEach( ing => {
-          receta.addIngrediente(ing);
+          receta.addIngredientes(ing);
        });
 
        this.recetas.push(receta);

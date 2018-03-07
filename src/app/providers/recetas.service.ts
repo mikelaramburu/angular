@@ -19,7 +19,7 @@ export class RecetasService {
     let receta;
 
     jsonData.forEach( el => {
-       receta = new Receta( el.nombre, el.cocinero);
+       receta = new Receta( el.nombre, el.cocinero, el.imagen, el.descripcion);
        
        el.ingredientes.forEach( ing => {
           receta.addIngredientes(ing);

@@ -27,6 +27,7 @@
 
   <div class="col-xs-9">
     <h3>Detalle Receta</h3>
+    <input type="text" class="search" [(ngModel)] = "searchText" placeholder= "Busca tu receta">
     <app-detalle [receta]="recetaSelec"
                            (eventoEmitir)="recibirReceta($event)" ></app-detalle>
   </div>  

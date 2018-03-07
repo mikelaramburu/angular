@@ -20,7 +20,7 @@ export class RecetarioComponent implements OnInit {
     console.log('RecetarioComponent ngOnInit');
     this.recetas = this.recetasService.getAll();
 
-    this.recetaSelec = this.recetas[0] || new Receta('Anonimo');
+    this.recetaSelec = this.recetas[0] || new Receta("","","","");
 
   }
 
@@ -29,4 +29,20 @@ export class RecetarioComponent implements OnInit {
     this.recetaSelec = receta;
   }
 
+  show(receta){
+
+    //console.log('show %s', receta.nombre);
+    this.recetaSelec = receta;
+    //console.log(this.recetaSeleccionada);
+  }
+
+  glutenFree(gluten){
+    console.log(gluten.checked);
+    if(gluten.checked){
+
+    } else {
+
+    }
+
+}
 }

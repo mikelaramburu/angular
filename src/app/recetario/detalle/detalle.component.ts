@@ -9,10 +9,7 @@ import { RecetasService } from '../../providers/recetas.service';
   styleUrls: ['./detalle.component.scss']
 })
 export class DetalleComponent implements OnInit {
-  recetaSelec : Array<Receta>;
-  receta1=Receta;
-
-  @Input('receta') receta : Receta;
+  @Input ('receta') receta: Receta;
 
   constructor() { 
     console.log('DetalleComponent constructor');

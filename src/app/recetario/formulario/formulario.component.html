@@ -9,7 +9,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" id ="btn-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <h4 class="modal-title" id="myModalLabel">Nueva receta</h4>
                 </div>
             <div class="modal-body">
                 <p>Valores: {{formulario.value | json}}</p>
@@ -23,7 +23,7 @@
             <div class="col-md-6 col-sm-6">
                 <div class="form group form-inline">                   
                     <label for="nombre">Nombre:</label>
-                    <input formControlName="nombre" placeholder="Nombre">
+                    <input formControlName="nombre" placeholder="Nombre" class="inpNombre">
                     <p *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched"  class="text-danger">Obligatorio 2 letras minimo.</p>
                </div>
                 
@@ -51,13 +51,20 @@
    
             </div>
 
-            <!-- Imagen receta --> 
-            <div class="col-md-6 col-sm-6">  
-                <div class="form-group form-inline">                                    
-                    <img src="./assets/img/ensalada.jpg" class="imgNuevaReceta" alt="Responsive image"/>
+<!-- Imagen receta --> 
+            <div class="col-md-6 col-sm-6"> 
+                    <img [src]="formulario.controls.imagen.value" class= "imgModal" [alt]="formulario.controls.nombre.value"> 
+                    <!--   <img src="imagen" class="imgModal" alt="Responsive image"/> -->
+                    <!-- <img src="./assets/img/ensalada.jpg" class="imgModal" alt="Responsive image"/> -->
+                <div class="form-group form-inline">
+                    <label for="imagen">Imagen: </label>
+                    <input formControlName="imagen" id="imagen" class="form-control">
+                    <p *ngIf="formulario.controls.imagen.invalid && formulario.controls.imagen.touched" class="text-danger">La imagen es obligatoria</p>                                    
+                  
                    
-            </div>
-            <input formcontrolername="imagen" placeholder="imagen">
+            
+           
+        </div>
         </div> 
                    
         </div>   <!-- cierre row  -->      

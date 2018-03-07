@@ -32,6 +32,7 @@ export class RecetasService {
   }
 
   crear(receta: Receta): void{
+    console.log('RecetasService receta %o', receta);
     this.recetas.unshift(receta);
   }
 

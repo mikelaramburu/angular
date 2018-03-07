@@ -25,6 +25,7 @@ import { CocheComponent } from './concesionario/coche/coche.component';
 import { ListadoComponent } from './concesionario/listado/listado.component';
 import { RecetarioComponent } from './recetario/recetario.component';
 import { DetalleComponent } from './recetario/detalle/detalle.component';
+import { FormularioComponent } from './recetario/formulario/formulario.component';
 
 //import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
@@ -43,7 +44,7 @@ import { DetalleComponent } from './recetario/detalle/detalle.component';
     FilterPipe,
     RecetarioComponent,
     DetalleComponent,
-    //ReactiveFormsComponent
+    FormularioComponent
 
   ],
   imports: [

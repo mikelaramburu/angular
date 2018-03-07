@@ -1,25 +1,28 @@
 
  <!-- DETALLE {{receta.nombre}} -->
- 
- <div class="recetaDetalle">
+ <div class="col-sm-6 col-md-12" >
+    <div class="thumbnail">
+        <div class="recetaDetalle">
 
-  <div class="row imagenIngredientes">
-      <img src="{{receta.imagen}}" alt="{{receta.nombre}}">
-      <img class="gluten" *ngIf="receta.isGlutenFree" src="\assets\img\gluten_free_icon.png" alt="gluten">
-      <img class="gluten" *ngIf="!receta.isGlutenFree" src="\assets\img\gluten_icon.png" alt="gluten">
-      <ul><span class="ingredientes">Ingredientes</span> 
-          <li *ngFor="let ingrediente of receta.ingredientes">{{ingrediente}}</li>
-      </ul>
-  </div>
+        <div class="row imagenIngredientes">
+            <img src="{{receta.imagen}}" alt="{{receta.nombre}}">
+            <img class="gluten" *ngIf="receta.isGlutenFree" src="\assets\img\gluten_free_icon.png" alt="gluten">
+            <img class="gluten" *ngIf="!receta.isGlutenFree" src="\assets\img\gluten_icon.png" alt="gluten">
+            <ul><span class="ingredientes">Ingredientes</span> 
+                <li *ngFor="let ingrediente of receta.ingredientes">{{ingrediente}}</li>
+            </ul>
+        </div>
 
-  <div class="row info">
-      <span class="likes label label-primary">{{receta.likes}} likes</span>
-      <span class="nombre">{{receta.nombre}}</span>
-      <span class="cocinero">{{receta.cocinero}}</span>
-  </div>
+        <div class="row info">
+            <span class="likes label label-primary">{{receta.likes}} likes</span>
+            <span class="nombre">{{receta.nombre}}</span>
+            <span class="cocinero">{{receta.cocinero}}</span>
+        </div>
 
-  <div class="row descripcion">
-      <p>{{receta.descripcion}}</p>
-  </div>
+        <div class="row descripcion">
+            <p>{{receta.descripcion}}</p>
+        </div>
 
+        </div>
+    </div>
 </div>

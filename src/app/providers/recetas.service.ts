@@ -31,4 +31,9 @@ export class RecetasService {
     return this.recetas;
   }
 
+  crear(receta: Receta): void{
+    this.recetas.unshift(receta);
+  }
+
+
 }

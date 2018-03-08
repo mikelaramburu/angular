@@ -21,35 +21,46 @@
         <div class="row">
 
             <div class="col-md-6 col-sm-6">
-                <div class="form group form-inline">                   
-                    <label for="nombre">Nombre:</label>
-                    <input formControlName="nombre" placeholder="Nombre" class="inpNombre">
-                    <p *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched"  class="text-danger">Obligatorio 2 letras minimo.</p>
-               </div>
+                    <div class="form group form-inline">
+                        <div [ngClass]="estilosInput(formulario.controls.nombre)" >                    
+                            <label for="nombre">Nombre:</label>
+                            <input formControlName="nombre" placeholder="Nombre" class="inpNombre">
+                            <p *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched"  class="text-danger">Obligatorio 2 letras minimo.</p>
+               
+                        </div>
+                    </div>
                 
 <!-- Input Cocinero -->           
                 <div class="form group form-inline">                
-                    <label for="Cocinero">Cocinero:</label>
-                    <input formControlName="cocinero" placeholder="Cocinero">
-                    <p *ngIf="formulario.controls.cocinero.invalid && formulario.controls.cocinero.touched"  class="text-danger">Obligatorio 5 letras minimo.</p>
-                </div>
+                    <div [ngClass]="estilosInput(formulario.controls.cocinero)">
+                        <label for="Cocinero">Cocinero:</label>
+                        <input formControlName="cocinero" placeholder="Cocinero">
+                        <p *ngIf="formulario.controls.cocinero.invalid && formulario.controls.cocinero.touched"  class="text-danger">Obligatorio 5 letras minimo.</p>
+                
+                    </div>
+                </div>    
 
 
 
 <!-- RadioButtons -->
-                <hr> 
-                <div class = "radios">            
-                <p>¿La receta que quieres crear contiene gluten?</p>
-              
-                    <label class="radio-inline">
-                    <input type="radio" name="optradio" checked>Si
-                    </label>
-                    <label class="radio-inline">
-                    <input type="radio" name="optradio">No
-                    </label> 
-                </div>                                  
-   
-            </div>
+                <hr>                 
+                <div class="form-group">
+                        <label for="gluten">¿La receta que quieres crear contiene gluten?:</label>
+                        <input type="radio" formControlName="gluten" value="true">Si
+                        <input type="radio" formControlName="gluten" value="false">No                    
+                    </div> 
+
+<!-- Ingredientes -->
+                <label for="">Ingredientes </label>
+                <a (click)="clickOtroIngrediente()">Añadir Ingrediente</a>
+                    <div formArrayName="ingredientes"
+                        *ngFor="let ingrediente of formulario.get('ingredientes').controls; let i = index;">                    
+                        <div [formGroupName]="i">
+                            <input formControlName="nombre" placeholder="Nuevo Ingrediente" class="ingrediente-input">                        
+                            <span class="glyphicon glyphicon-remove-circle" (click)="clickEliminarIngrediente(i)"></span>
+                        </div>                   
+                    </div>
+            </div> <!-- cierre col  -->
 
 <!-- Imagen receta --> 
             <div class="col-md-6 col-sm-6"> 
@@ -60,21 +71,21 @@
                     <label for="imagen">Imagen: </label>
                     <input formControlName="imagen" id="imagen" class="form-control">
                     <p *ngIf="formulario.controls.imagen.invalid && formulario.controls.imagen.touched" class="text-danger">La imagen es obligatoria</p>                                    
-                  
+                </div>
+            </div> 
                    
-            
-           
-        </div>
-        </div> 
-                   
-        </div>   <!-- cierre row  -->      
+        </div>   <!-- cierre row  -->
+
+
 <!-- Textarea: descripción -->
                 <h3>Descripción</h3>
                     <p>Añade los ingredientes necesarios para crear tu receta:</p>
                 <form>
                     <div class="form-group">
                         <label for="comment">(minimo 100 caracteres)</label>
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                            <textarea class="form-control" formControlName="descripcion" maxlength="500"></textarea>
+                            <p *ngIf="formulario.controls.descripcion.invalid && formulario.controls.descripcion.touched" class="text-danger">*Obligatorio, mínimo 100 letras</p>
+
                     </div>
                 </form>
                     

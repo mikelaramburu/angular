@@ -1,28 +1,34 @@
 
  <!-- DETALLE {{receta.nombre}} -->
- <div class="col-sm-6 col-md-12" >
-    <div class="thumbnail">
-        <div class="recetaDetalle">
+ <h2>{{receta.nombre}}</h2>
 
-        <div class="row imagenIngredientes">
-            <img src="{{receta.imagen}}" alt="{{receta.nombre}}">
-            <img class="gluten" *ngIf="receta.isGlutenFree" src="\assets\img\gluten_free_icon.png" alt="gluten">
-            <img class="gluten" *ngIf="!receta.isGlutenFree" src="\assets\img\gluten_icon.png" alt="gluten">
-            <ul><span class="ingredientes">Ingredientes</span> 
-                <li *ngFor="let ingrediente of receta.ingredientes">{{ingrediente}}</li>
-            </ul>
-        </div>
+ <div class="receta-content row">
+   
+   <div class="col-md-5">    
+     <a class="thumbnail">
+       <img class="img-rounded" src="{{receta.imagen}}" alt="{{receta.nombre}}" data-toggle="modal">
+       <img [src]=" (receta.isGlutenFree) ? 'assets/imgs/gluten_free_icon.png' : 'assets/imgs/gluten_icon.png' " alt="info gluten" class="icono-gluten">
+     </a>
+     <p id="pieFoto">
+            <button type="button" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" (click)="sumLike()"> {{receta.likes}}</span> Like
+    </button>
+        <span id="cocinero" style="float:right">by {{receta.cocinero}}</span>
+     </p>      
+   </div>
+   
+   <div class="col-md-7">
+     <h4>Ingredientes</h4>
+     <ul class="list-group">
+       <li class="list-group-item" *ngFor='let ingrediente of receta.ingredientes'>{{ingrediente}}</li>
+     </ul>
+   </div> 
 
-        <div class="row info">
-            <span class="likes label label-primary">{{receta.likes}} likes</span>
-            <span class="nombre">{{receta.nombre}}</span>
-            <span class="cocinero">{{receta.cocinero}}</span>
-        </div>
 
-        <div class="row descripcion">
-            <p>{{receta.descripcion}}</p>
-        </div>
+   <div class="col-md-12">
+     <p>{{receta.descripcion}}</p>
+   </div>
 
-        </div>
-    </div>
-</div>
+ </div>  
+
+ 

@@ -17,18 +17,25 @@
     </li>
     </ul>
 </nav>
-
+<!-- Lista de recetas -->
 <div class="row">
-  <div class="col-md-2">
+    <div id="listaRecetas" class="col-md-3">
       <div class="panel panel-default">
           <div class="panel-heading">
              <h3>Listado Recetas</h3>   
           </div>
       <div class="panel body">
-          <ul>
+         <!--  <ul>
               <li *ngFor="let receta of recetas"
                   (click)="seleccionarReceta(receta)">{{receta.nombre}}</li>
-            </ul>  
+            </ul>   -->
+            <div class="list-group">        
+          
+                    <a *ngFor='let receta of recetas | filterRecetas : searchText : glutenFilter' class="list-group-item" (click)="seleccionarReceta(receta)">
+                        <b>{{receta.nombre}}</b> <br> <em>{{receta.cocinero}}</em>
+                        <img [src]=" (receta.isGlutenFree) ? 'assets/imgs/gluten_free_icon.png' : 'assets/imgs/gluten_icon.png' " alt="info gluten" class="icono-gluten">
+                    </a>
+            </div>
       </div>
   
   </div>

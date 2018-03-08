@@ -12,6 +12,7 @@ import { RecetasService } from './providers/recetas.service';
 //Pipes
 import {RoundPipe} from './pipes/round.pipe';
 import {FilterPipe} from './pipes/filter.pipe';
+import { FilterRecetas } from './pipes/filter-recetas.pipe';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { ListadoComponent } from './concesionario/listado/listado.component';
 import { RecetarioComponent } from './recetario/recetario.component';
 import { DetalleComponent } from './recetario/detalle/detalle.component';
 import { FormularioComponent } from './recetario/formulario/formulario.component';
+import { FormComponent } from './concesionario/form/form.component';
 
 //import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
@@ -42,9 +44,11 @@ import { FormularioComponent } from './recetario/formulario/formulario.component
     ListadoComponent,
     RoundPipe,
     FilterPipe,
+    FilterRecetas,
     RecetarioComponent,
     DetalleComponent,
-    FormularioComponent
+    FormularioComponent,
+    FormComponent
 
   ],
   imports: [

@@ -83,7 +83,7 @@
                 <form>
                     <div class="form-group">
                         <label for="comment">(minimo 100 caracteres)</label>
-                            <textarea class="form-control" formControlName="descripcion" maxlength="500"></textarea>
+                        <textarea formControlName="descripcion" maxlength="500" class="form-control"></textarea>
                             <p *ngIf="formulario.controls.descripcion.invalid && formulario.controls.descripcion.touched" class="text-danger">*Obligatorio, mínimo 100 letras</p>
 
                     </div>

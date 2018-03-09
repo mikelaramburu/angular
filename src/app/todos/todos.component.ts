@@ -33,10 +33,10 @@ export class TodosComponent implements OnInit {
    * Mapea los Datos en formato Json a Todo que proviene del Servicio Rest
    * @param resultado : any 
    */
-  mapeo( result : any ){
+  mapeo( resultado : any ){
 
     let todo:Todo;
-    result.forEach(el => {
+    resultado.forEach(el => {
         todo = new Todo( el.title );
         todo.id = el.id;
         todo.idUser = el.userId;
@@ -46,6 +46,14 @@ export class TodosComponent implements OnInit {
     });
 
   }
+
+ /*  eliminarTarea($event){
+    let todo:Todo;
+    
+   
+ 
+    
+  } */
   
 
 

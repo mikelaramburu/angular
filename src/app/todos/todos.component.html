@@ -2,10 +2,12 @@
   <section>
     <h2>Lista tareas</h2>
     <ul>
-      <li *ngFor="let todo of todos">
-        <input type="checkbox">{{todo.title}}
+        <li *ngFor="let todo of todos">
+        <input type="checkbox" [checked]="todo.completed">{{todo.title}} 
+         <span class="glyphicon glyphicon-trash" aria-hidden="true" clic="eliminarTarea($event)"></span>
     </li>      
     </ul>
-  </section>
-
+    </section>
+   
+    <!-- <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">Añadir tarea</span>  -->
 </div>

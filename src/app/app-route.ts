@@ -8,6 +8,8 @@ import{HomeComponent} from './home/home.component';
 import{UsuarioComponent} from './usuario/usuario.component';
 import { ConcesionarioComponent } from './concesionario/concesionario.component';
 import{RecetarioComponent} from './recetario/recetario.component';
+import { PlantillaComponent } from './plantilla/plantilla.component';
+import { TodosComponent } from './todos/todos.component';
 //import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
  const appRoutes: Routes = [
@@ -18,6 +20,8 @@ import{RecetarioComponent} from './recetario/recetario.component';
     { path: 'receta', component: RecetaComponent },
     { path: 'propiedades',component: PropiedadesComponent },
     { path: 'recetario',component: RecetarioComponent },
+    { path: 'plantilla',component: PlantillaComponent },
+    { path: 'todos',component: TodosComponent },
 
     { path: '**', component: Page404Component },
 

@@ -1,0 +1,20 @@
+
+
+<button (click)="switchUser()">switchUser</button>
+<br>
+<br>
+
+<div *ngIf="admin; then adminTemplate else userTemplate"></div>
+
+<ng-template #adminTemplate>
+
+  <span class="label label-success">Admin</span>
+
+</ng-template>
+
+
+<ng-template #userTemplate>
+
+  <span class="label label-info">Usuario</span>
+
+</ng-template>

@@ -10,6 +10,7 @@ import { ConcesionarioComponent } from './concesionario/concesionario.component'
 import{RecetarioComponent} from './recetario/recetario.component';
 import { PlantillaComponent } from './plantilla/plantilla.component';
 import { TodosComponent } from './todos/todos.component';
+import {FormBasicoComponent} from './form-basico/form-basico.component'
 //import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
  const appRoutes: Routes = [
@@ -22,6 +23,7 @@ import { TodosComponent } from './todos/todos.component';
     { path: 'recetario',component: RecetarioComponent },
     { path: 'plantilla',component: PlantillaComponent },
     { path: 'todos',component: TodosComponent },
+    {path: 'form-basico',component: FormBasicoComponent },
 
     { path: '**', component: Page404Component },
 

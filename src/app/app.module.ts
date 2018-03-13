@@ -34,6 +34,7 @@ import { FormularioComponent } from './recetario/formulario/formulario.component
 import { FormComponent } from './concesionario/form/form.component';
 import { PlantillaComponent } from './plantilla/plantilla.component';
 import { TodosComponent } from './todos/todos.component';
+import { FormBasicoComponent } from './form-basico/form-basico.component';
 
 //import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
@@ -56,7 +57,8 @@ import { TodosComponent } from './todos/todos.component';
     FormularioComponent,
     FormComponent,
     PlantillaComponent,
-    TodosComponent
+    TodosComponent,
+    FormBasicoComponent
 
   ],
   imports: [
